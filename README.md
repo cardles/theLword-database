@@ -41,7 +41,7 @@ Em uma *New Set*, insere arquivo .json completo, criando *documents* automaticam
 
 * Na linha de comando do Robo 3T:
 <br>
-`db.getCollection('characters-TLW').insertMany( *characters-TLW.json* )`
+`db.getCollection('characters-TLW').insertMany( characters-TLW.json )`
 <br>
 <br>
 
@@ -86,7 +86,7 @@ Oculta ou apresenta atributos dentro dos *documents*.
 
 * Para não apresentar apenas o atributo `presentIn`, na linha de comando do Robo 3T:
 <br>
-`db.getCollection('characters-TLW').find({}, {"presentIn": 0})`
+`db.getCollection('characters-TLW').find({}, { "presentIn": 0 })`
 <br>
 <br>
 
@@ -98,7 +98,7 @@ Oculta ou apresenta atributos dentro dos *documents*.
 
 * Na linha de comando do Robo 3T:
 <br>
-`db.getCollection('characters-TLW').find({"iLove": true}, {"about": 0})`
+`db.getCollection('characters-TLW').find({"iLove": true}, { "about": 0 })`
 <br>
 <br>
 
@@ -124,7 +124,7 @@ Encontra *document* por uma lista, sendo necessário declarar a chave da lista e
 
 * Na linha de comando do Robo 3T:
 <br>
-`db.getCollection('characters-TLW').find({ "presentIn": {$elemMatch: { "originalVersion": "Mia Kirshner, Jennifer Beals, Pam Grier, Laurel Holloman, Erin Daniels, Leisha Hailey and Katherine Moennig star in this intimate drama series about a group of lesbian friends struggling with romance and careers in Los Angeles" }}})`
+``db.getCollection('characters-TLW').find({ "presentIn": {$elemMatch: { "originalVersion": "Mia Kirshner, Jennifer Beals, Pam Grier, Laurel Holloman, Erin Daniels, Leisha Hailey and Katherine Moennig star in this intimate drama series about a group of lesbian friends struggling with romance and careers in Los Angeles" }}})``
 <br>
 <br>
 
