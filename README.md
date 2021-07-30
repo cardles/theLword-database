@@ -124,9 +124,11 @@ Encontra *document* por uma lista, sendo necessário declarar a chave da lista e
 
 * Na linha de comando do Robo 3T:
 <br>
+
 ```
 db.getCollection('characters-TLW').find({ "presentIn": {$elemMatch: { "originalVersion": "Mia Kirshner, Jennifer Beals, Pam Grier, Laurel Holloman, Erin Daniels, Leisha Hailey and Katherine Moennig star in this intimate drama series about a group of lesbian friends struggling with romance and careers in Los Angeles" }}})
 ```
+
 <br>
 <br>
 
