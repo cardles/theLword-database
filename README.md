@@ -16,9 +16,9 @@ Para iniciar o desafio, foi necessário rodar o servidor, iniciar o MongoDB e ab
     * `./mongo` inicia o Mongo no computador pelo terminal *bash*.
 
 * Após realizar esse processo, é necessário abrir o programa Robo 3T e criar uma *connection*, especificando o endereço e a porta que correspondem ao local onde está rodando o MongoDB. 
-* Dentro da *connection* é necessário criar um *database* e, dentro dele, uma *collection*.
-<br>
+* Dentro da *connection* é necessário criar um *database* e, dentro dele, uma *collection*. <br>
 Pronto, já temos o necessário para começar! 
+<br>
 <br>
 
 
@@ -43,6 +43,7 @@ Em uma *New Set*, insere arquivo .json completo, criando *documents* automaticam
 <br>
 `db.getCollection('characters-TLW').insertMany( *characters-TLW.json* )`
 <br>
+<br>
 
 
 ### > atualizar *document*
@@ -62,35 +63,31 @@ Inclui um novo atributo em um *document* existente, encontrando-o através do at
 `db.getCollection('characters-TLW').update({ "name" : "Helena Peabody" }, {$set: { "iLove": false }})`
 `db.getCollection('characters-TLW').update({ "name" : "Jenny Schecter" }, {$set: { "iLove": false }})`
 <br>
+<br>
 
 
 ### > remover *document*
 Remove o *document* por completo, encontrando-o através do atributo declarado. 
 
-* Para remover o *document* que recebe `Jenny Schecter` como valor da chave `name`:
-* Na linha de comando do Robo 3T:
+* Para remover o *document* que recebe `Jenny Schecter` como valor da chave `name`, na linha de comando do Robo 3T:
 <br>
-
 `db.getCollection('characters-TLW').remove({ "name" : "Jenny Schecter" })`
-
+<br>
 <br>
 
 
 ### > pesquisar com projeção
 Oculta ou apresenta atributos dentro dos *documents*. 
 
-* Para apresentar apenas os atributos `name` e `iLove`:
-* Na linha de comando do Robo 3T:
+* Para apresentar apenas os atributos `name` e `iLove`, na linha de comando do Robo 3T:
 <br>
-
 `db.getCollection('characters-TLW').find({}, { "name": 1, "iLove": 1 })`
-
-* Para não apresentar apenas o atributo `presentIn`:
-* Na linha de comando do Robo 3T:
 <br>
 
+* Para não apresentar apenas o atributo `presentIn`, na linha de comando do Robo 3T:
+<br>
 `db.getCollection('characters-TLW').find({}, {"presentIn": 0})`
-
+<br>
 <br>
 
 
@@ -101,9 +98,8 @@ Oculta ou apresenta atributos dentro dos *documents*.
 
 * Na linha de comando do Robo 3T:
 <br>
-
 `db.getCollection('characters-TLW').find({"iLove": true}, {"about": 0})`
-
+<br>
 <br>
 
 
@@ -115,10 +111,10 @@ Oculta ou apresenta atributos dentro dos *documents*.
 
 * Na linha de comando do Robo 3T:
 <br>
-
 `db.getCollection('characters-TLW').find().sort({ "name": 1 }).skip( 4 ).limit( 3 )`
-
 <br>
+<br>
+
 
 ### > pesquisar com array
 Encontra *document* por uma lista, sendo necessário declarar a chave da lista e o atributo do objeto.
@@ -128,11 +124,10 @@ Encontra *document* por uma lista, sendo necessário declarar a chave da lista e
 
 * Na linha de comando do Robo 3T:
 <br>
-
 `db.getCollection('characters-TLW').find({ "presentIn": {$elemMatch: { "originalVersion": "Mia Kirshner, Jennifer Beals, Pam Grier, Laurel Holloman, Erin Daniels, Leisha Hailey and Katherine Moennig star in this intimate drama series about a group of lesbian friends struggling with romance and careers in Los Angeles" }}})`
+<br>
+<br>
 
-<br>
-<br>
 
 ## bibliografia
 https://thelwordguide.weebly.com/character-guide.html <br>
