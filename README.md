@@ -19,7 +19,6 @@ Para iniciar o desafio, foi necessário rodar o servidor, iniciar o MongoDB e ab
 * Dentro da *connection* é necessário criar um *database* e, dentro dele, uma *collection*.
 Pronto, já temos o necessário para começar! 
 <br>
-<br>
 
 
 ## dados utilizados
@@ -33,7 +32,7 @@ Os seletores abaixo foram utilizados no Robo 3T, conectado ao banco de dados Mon
 <br>
 
 
-### inserir vários *documents* simultaneamente
+#### inserir vários *documents* simultaneamente
 Em uma *New Set*, insere arquivo .json completo, criando *documents* automaticamente dentro da *collection*
 
     * `insertMany()` permite que vários objetos sejam inseridos ao mesmo tempo, gerando *documents* separados.
