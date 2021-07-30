@@ -1,5 +1,5 @@
 # {reprograma} week 12: database search challenge
-Desafio apresentado ao curso online de back-end da {reprograma}. <br>
+Desafio apresentado ao curso online de back-end da {reprograma}.  
 Tema da semana: *"Banco de Dados: Introdução ao MongoDB"*. 
 <br>
 <br>
@@ -16,10 +16,12 @@ Para iniciar o desafio, foi necessário rodar o servidor, iniciar o MongoDB e ab
     * `./mongo` inicia o Mongo no computador pelo terminal *bash*.
 
 * Após realizar esse processo, é necessário abrir o programa Robo 3T e criar uma *connection*, especificando o endereço e a porta que correspondem ao local onde está rodando o MongoDB. 
-* Dentro da *connection* é necessário criar um *database* e, dentro dele, uma *collection*. <br>
+* Dentro da *connection* é necessário criar um *database* e, dentro dele, uma *collection*.  
 Pronto, já temos o necessário para começar! 
 <br>
-<br>
+
+
+
 
 
 ## dados utilizados
