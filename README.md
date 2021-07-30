@@ -21,9 +21,6 @@ Pronto, já temos o necessário para começar!
 <br>
 
 
-
-
-
 ## dados utilizados
 Os dados que foram utilizados no bando de dados estão disponíveis dentro da pasta *data*, na qual consta o arquivo `characters-TLW.json`, criado por mim e baseado na série **The L Word**, da *Showtime*.
 <br>
@@ -40,12 +37,10 @@ Os seletores abaixo foram utilizados no Robo 3T, conectado ao banco de dados Mon
 Em uma *New Set*, insere arquivo .json completo, criando *documents* automaticamente dentro da *collection*.
 
 * `insertMany()` permite que vários objetos sejam inseridos ao mesmo tempo, gerando *documents* separados.
-
-* Na linha de comando do Robo 3T: <br>
+* Na linha de comando do Robo 3T:
 ~~~javascript
 db.getCollection('characters-TLW').insertMany( characters-TLW.json )
 ~~~
-<br>
 <br>
 
 
@@ -53,9 +48,7 @@ db.getCollection('characters-TLW').insertMany( characters-TLW.json )
 Inclui um novo atributo em um *document* existente, encontrando-o através do atributo declarado.
 
 * `{$set: { } }` permite que todo o conteúdo adicionado dentro de {} não substitua os outros atributos do *document*, apenas adicione novos.
-<br>
-
-* Na linha de comando do Robo 3T: <br>
+* Na linha de comando do Robo 3T:
 ~~~javascript
 db.getCollection('characters-TLW').update({ " name" : "Bette Porter" }, {$set: { "iLove": true }})
 db.getCollection('characters-TLW').update({ "name" : "Shane McCutcheon" }, {$set: { "iLove": false }})
@@ -67,47 +60,39 @@ db.getCollection('characters-TLW').update({ "name" : "Helena Peabody" }, {$set: 
 db.getCollection('characters-TLW').update({ "name" : "Jenny Schecter" }, {$set: { "iLove": false }})
 ~~~
 <br>
-<br>
 
 
 ### > remover *document*
 Remove o *document* por completo, encontrando-o através do atributo declarado. 
 
-* Para remover o *document* que recebe `Jenny Schecter` como valor da chave `name`, na linha de comando do Robo 3T: <br>
+* Para remover o *document* que recebe `Jenny Schecter` como valor da chave `name`, na linha de comando do Robo 3T:
 ~~~javascript
 db.getCollection('characters-TLW').remove({ "name" : "Jenny Schecter" })
 ~~~
-<br>
 <br>
 
 
 ### > pesquisar com projeção
 Oculta ou apresenta atributos dentro dos *documents*. 
 
-* Para apresentar apenas os atributos `name` e `iLove`, na linha de comando do Robo 3T: <br>
+* Para apresentar apenas os atributos `name` e `iLove`, na linha de comando do Robo 3T:
 ~~~javascript
 db.getCollection('characters-TLW').find({}, { "name": 1, "iLove": 1 })
 ~~~
-<br>
-
-* Para não apresentar apenas o atributo `presentIn`, na linha de comando do Robo 3T: <br>
+* Para não apresentar apenas o atributo `presentIn`, na linha de comando do Robo 3T:
 ~~~javascript
 db.getCollection('characters-TLW').find({}, { "presentIn": 0 })
 ~~~
-<br>
 <br>
 
 
 ### > pesquisar utilizando combinação entre os seletores
 * `find{}` é responsável pela visualização dos *documents*. Ao definir um atributo, apenas os itens que corresponderem a ele serão apresentados na tela.
 * `{ key: value }` não apresenta (value = 0) ou apresenta (value = 1) o atributo que contiver a chave declarada.
-<br>
-
-* Na linha de comando do Robo 3T: <br>
+* Na linha de comando do Robo 3T: 
 ~~~javascript
 db.getCollection('characters-TLW').find({"iLove": true}, { "about": 0 })
 ~~~
-<br>
 <br>
 
 
@@ -115,13 +100,10 @@ db.getCollection('characters-TLW').find({"iLove": true}, { "about": 0 })
 * `sort{ chave: 1 }` ordena os *documents* por ordem crescente (value = 1) ou decrescente (value = -1) a partir da chave declarada.
 * `limit( value )` limita a apresentação de *documents* à quantidade inserida em *value*.
 * `skip( value )` pula, do ultimo para o primeiro, a quantidade de *documents* inserida em *value*.
-<br>
-
-* Na linha de comando do Robo 3T: <br>
+* Na linha de comando do Robo 3T:
 ~~~javascript
 db.getCollection('characters-TLW').find().sort({ "name": 1 }).skip( 4 ).limit( 3 )
 ~~~
-<br>
 <br>
 
 
@@ -129,13 +111,10 @@ db.getCollection('characters-TLW').find().sort({ "name": 1 }).skip( 4 ).limit( 3
 Encontra *document* por uma lista, sendo necessário declarar a chave da lista e o atributo do objeto.
 
 * `$elemMatch` percorre os atributos (elements) dentro da lista `presentIn` e checa se um corresponde ao outro, retornando *documents* que contenham o atributo declarado.
-<br>
-
-* Na linha de comando do Robo 3T: <br>
+* Na linha de comando do Robo 3T:
 ~~~javascript
 db.getCollection('characters-TLW').find({ "presentIn": {$elemMatch: { "originalVersion": "Mia Kirshner, Jennifer Beals, Pam Grier, Laurel Holloman, Erin Daniels, Leisha Hailey and Katherine Moennig star in this intimate drama series about a group of lesbian friends struggling with romance and careers in Los Angeles" }}})
 ~~~
-<br>
 <br>
 
 
